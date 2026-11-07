@@ -1,0 +1,48 @@
+from pathlib import Path
+
+# Project paths
+ROOT = Path(__file__).resolve().parents[1]
+MODEL_DIR = ROOT / "models"
+SAMPLE_DIR = ROOT / "samples"
+
+# Camera
+CAMERA_INDEX = 0
+FRAME_WIDTH = 1280
+FRAME_HEIGHT = 720
+
+# MediaPipe Tasks model files
+HAND_MODEL = MODEL_DIR / "hand_landmarker.task"
+POSE_MODEL = MODEL_DIR / "pose_landmarker_full.task"
+
+# Hand landmark detector
+NUM_HANDS = 2
+MIN_HAND_DETECTION_CONFIDENCE = 0.5
+MIN_HAND_PRESENCE_CONFIDENCE = 0.5
+MIN_HAND_TRACKING_CONFIDENCE = 0.5
+
+# Pose detector
+MIN_POSE_DETECTION_CONFIDENCE = 0.5
+MIN_POSE_PRESENCE_CONFIDENCE = 0.5
+MIN_POSE_TRACKING_CONFIDENCE = 0.5
+
+# Strike detection.
+# Velocity is normalized image distance per second.
+VELOCITY_THRESHOLD = 0.20
+MIN_DOWNWARD_MOVEMENT = 0.006
+POSITION_DEADBAND = 0.0025
+RETRIGGER_UPWARD_MOVEMENT = 0.008
+POSITION_SMOOTHING_ALPHA = 0.55
+COOLDOWN_SECONDS = 0.16
+MIN_CONFIDENCE = 0.50
+
+# Audio
+AUDIO_FREQUENCY = 44100
+AUDIO_SIZE = -16
+AUDIO_CHANNELS = 2
+AUDIO_BUFFER = 512
+MASTER_VOLUME = 0.80
+
+# Display
+SHOW_LANDMARKS = True
+SHOW_ZONES = True
+SHOW_DEBUG = True
